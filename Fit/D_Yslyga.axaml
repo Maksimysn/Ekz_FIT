@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="600" Height="400"
+        x:Class="Fit.D_Yslyga"
+        Title="Добавление">
+        
+    <DockPanel>
+        <StackPanel>
+            <TextBlock Text="Фамилия:"/>
+            <ComboBox Name="NNTextBox" Margin="0,0,0,10"/>
+            <TextBlock Text="Имя:"/>
+            <TextBox Name="NFTextBox" Margin="0,0,0,10"/>
+            <TextBlock Text="Номер телефона:"/>
+            <TextBox Name="TTextBox" Margin="0,0,0,10"/>
+            <TextBlock Text="Дата рождения:"/>
+            <TextBox Name="DTextBox" Margin="0,0,0,10"/>
+            <TextBlock Text="Пол:"/>
+            <TextBox Name="PTextBox" Margin="0,0,0,10"/>
+            <TextBlock Text="Скидка:"/>
+            <TextBox Name="STextBox" Margin="0,0,0,10"/>
+            <Button Content="Добавить" Click="AddServices_Click" DockPanel.Dock="Bottom" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </DockPanel>
+
+        
+        
+</Window>

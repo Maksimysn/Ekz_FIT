@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Fit.Yslyga"
+        Title="Клиенты">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- StackPanel для поиска и фильтрации --> 
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10">
+            <TextBlock Text="Поиск:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="SearchTextBox" Width="150"/>
+            <ComboBox x:Name="ComboBox" Width="150" Margin="0,0,5,0" SelectionChanged="ComboBox_SelectionChanged"/>
+            <Button Content="Сбросить фильтр" Click="ResetFilterButton_Click"/>
+            <Button Content="Сортировать" Click="SortBy_Click"/>
+        </StackPanel>
+
+        
+        <DataGrid Name="ServicesGrid" x:CompileBindings="False" SelectionChanged="ServicesGrid_SelectionChanged"
+                  Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=ServicesID}" />
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=NameN}" />
+                <DataGridTextColumn Header="Имя" Binding="{Binding Path=NameF}" />
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding Path=Telephone}" />
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding Path=Date}" />
+                <DataGridTextColumn Header="Пол" Binding="{Binding Path=Pol}" />
+                <DataGridTextColumn Header="Скидка" Binding="{Binding Path=Skidka}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- StackPanel для кнопок -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10">
+            <Button Content="Добавить данные" Click="OpenNextForm_Click"/>
+            <Button Content="Удалить" Click="DeleteGrid_Click"/>
+            <Button Content="Редактировать" Click="EditGrid_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
